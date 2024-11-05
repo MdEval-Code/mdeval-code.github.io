@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="MDEVAL: Massively Multilingual Code Debugging" />
+  <meta name="keywords" content="Multilingual, Code, Large Language Models, LLM, Code LLM, Debug ,Evaluation, Benchmark" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>
+    MDEVAL: Massively Multilingual Code Debugging
+  </title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+
+      gtag("js", new Date())
+
+      gtag("config", "G-PYVRSFMDRL")
+    </script> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/bulma.min.css" />
+  <link rel="stylesheet" href="./css/bulma-carousel.min.css" />
+  <link rel="stylesheet" href="./css/bulma-slider.min.css" />
+  <link rel="stylesheet" href="./css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="icon" href="./images/favicon.svg" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./js/fontawesome.all.min.js"></script>
+  <script src="./js/bulma-carousel.min.js"></script>
+  <script src="./js/bulma-slider.min.js"></script>
+  <script src="./js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              MDEVAL: Massively Multilingual Code Debugging
+            </h1>
+            
+       <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="">Shukai Liu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Linzheng Chai</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Jian Yang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Jiajun Shi</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Liran Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Ke Jin</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Wei Zhang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="">Hualei Zhu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Shuyue Guo</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="">Tao Sun</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Jiaheng Liu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="">Yunlong Duan</a><sup>2</sup></span>
+              <span class="author-block">
+                <a href="">Yu Hao</a><sup>2</sup></span>
+              <span class="author-block">
+                <a href="">Liqun Yang</a><sup>1</sup></span>
+              <span class="author-block">
+                <a href="">Guanglin Niu</a><sup>1</sup></span>
+              <span class="author-block">
+                <a href="">Ge Zhang</a><sup>2</sup></span>
+              <span class="author-block">
+                <a href="">Zhoujun Li</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>CCSE, Beihang University</span>
+              <span class="author-block"><sup>2</sup>M-A-P</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2411.02310" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Evaluation Data</span>
+                  </a>
+                </span>
+
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>MdEval-Instruct</span>
+                  </a>
+                </span>
+                <!-- Leaderboard Link. -->
+                <span class="link-block">
+                  <a href="leaderboard.html" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa fa-trophy"></i>
+                    </span>
+                    <span>Leaderboard</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <!-- center the image -->
+          <img src="./images/intro.png" alt="Teaser" class="teaser-image center" width="60%" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Introduction</h2>
+          <div class="content has-text-justified">
+            <p>
+              To advance the field of multilingual debugging with LLMs, we propose the first massively multilingual debugging benchmark, which includes 3.6K test samples of 18 programming languages and covers the automated program repair (APR) task, the code review (CR) task, and the bug identification (BI) task. 
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+ 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Error types</h2>
+          <div class="content has-text-justified">
+            <div class="columns is-centered">
+              <img src="./images/error_type.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+                height="80%" />
+            </div>
+            <p>
+              Error types in MDEVAL. Part (a) shows generic error types, and Part (b) lists language-specific error types.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3"> Human Annotation & Quality Control</h2>
+          <div class="content has-text-justified">
+            <div class="columns is-centered">
+              <img src="./images/overview.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+                height="80%" />
+            </div>
+            <p>
+              We collected and filtered code snippets
+              from GitHub. Before annotation, we summarized error types. Annotators then labeled the code
+              based on these types. To ensure quality, they used GPT-4o to evaluate the annotations on four
+              criteria: difficulty, ambiguity, error type, and solvable. Finally, they exchanged data with each other
+              to minimize bias and errors.
+            </p>
+          </div>
+        </div>
+      </div>  
+  </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Examples of three tasks</h2>
+          <div class="content has-text-justified">
+            <div class="columns is-centered">
+              <img src="./images/example.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+                height="80%" />
+            </div>
+            <p>
+              Examples of multilingual automated program repair (APR), code review (CR), and code identification (CI).
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+<section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Performance across error types</h2>
+          <div class="content has-text-justified">
+            <div class="columns is-centered">
+              <img src="./images/radar.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+                height="80%" />
+            </div>
+            <p>
+              The performance of models on the automated program repair task varies
+              across different error types, highlighting the strengths and weaknesses of these models in addressing
+              specific challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+<section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Another Two Automated Program Repair Settings</h2>
+          <div class="content has-text-justified">
+            <div class="columns is-centered">
+              <img src="./images/performance.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+                height="80%" />
+            </div>
+            <p>
+              wo additional automated program repair settings are designed to simulate realistic user
+              queries. Part (a) presents results for the scenario where models are provided with buggy code along
+              with example test cases, while Part (b) illustrates results for the scenario where only the buggy code
+              is provided to the models.
+            </p>
+          </div>
+        </div>
+      </div>
+</section>
+  <footer class="footer">
+    <div class="container">
+
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Please reach out to <a href="liusk@buaa.edu.cn">challenging@buaa.edu.cn</a> for questions or
+              feedback on MdEval. We are also open to collaborations and suggestions for new scenarios to add to
+              the benchmark. Finally, MdEval provides one axis of LLM debugging evaluations and we recommend the
+              following leaderboards for measuring code LM ability on various coding tasks, such as
+              <a href="https://livecodebench.github.io/leaderboard.html">LiveCodeBench Leaderboard</a>,
+              <a href="https://evalplus.github.io/leaderboard.html">EvalPlus Leaderboard</a>,
+              <a href="https://crux-eval.github.io/leaderboard.html">CruxEval Leaderboard</a>,
+              <a href="https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard">Chatbot Arena Leaderboard</a>,
+              <a href="https://huggingface.co/spaces/bigcode/bigcode-models-leaderboard">BigCode Models Leaderboard</a>,
+              <a href="https://infi-coder.github.io/inficoder-eval/">InfiCoder-Eval</a>, and
+              <a href="https://leaderboard.tabbyml.com/">TabbyML Leaderboard</a>.
+            </p>
+            <p>
+              The source code from this website is borrowed from <a
+                href="https://github.com/LiveCodeBench/livecodebench.github.io">LiveCodeBench</a>!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
