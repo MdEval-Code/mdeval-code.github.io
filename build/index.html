@@ -113,12 +113,13 @@
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
+                    <!-- todo -->
                     <span>Code</span>
                   </a>
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://mdeval-code.github.io/" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/MDEVAL" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
                     </span>
@@ -127,8 +128,9 @@
                 </span>
 
                 <!-- Dataset Link. -->
+                <!-- todo -->
                 <span class="link-block">
-                  <a href="https://mdeval-code.github.io/" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://huggingface.co/datasets/Multilingual-Multimodal-NLP/MDEVAL" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-images"></i>
                     </span>
@@ -172,7 +174,7 @@
           <h2 class="title is-3">Introduction</h2>
           <div class="content has-text-justified">
             <p>
-              To advance the field of multilingual debugging with LLMs, we propose the first massively multilingual debugging benchmark, which includes 3.6K test samples of 18 programming languages and covers the automated program repair (APR) task, the code review (CR) task, and the bug identification (BI) task. 
+              To advance the field of multilingual debugging with LLMs, we propose the first massively multilingual debugging benchmark, which includes 3.9K test samples of 20 programming languages and covers the automated program repair (APR) task, the bug localization (BI) task, and the bug identification (BI) task. 
             </p>
           </div>
         </div>
@@ -181,6 +183,24 @@
     </div>
   </section>
  
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Benchmark Overview</h2>
+          <div class="content has-text-justified">
+            <div class="columns is-centered">
+              <img src="./images/benchmark_overview.png" alt="HumanEval Overfitting" class="teaser-image center" width="100%"
+                height="80%" />
+            </div>
+            <p>
+              Comparison between MDEVAL and other code debugging benchmarks. MDEVAL significantly provides a comprehensive multilingual view by expanding the variety of programming languages and language-specific error types.
+            </p>
+          </div>
+        </div>
+      </div>
+  </section>
+
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -198,6 +218,7 @@
         </div>
       </div>
   </section>
+
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -230,7 +251,7 @@
                 height="80%" />
             </div>
             <p>
-              Examples of multilingual automated program repair (APR), code review (CR), and code identification (CI).
+              Examples of multilingual automated program repair (APR), bug localization (BI), and code identification (CI).
             </p>
           </div>
         </div>
@@ -262,7 +283,7 @@
           <h2 class="title is-3">Another Two Automated Program Repair Settings</h2>
           <div class="content has-text-justified">
             <div class="columns is-centered">
-              <img src="./images/performance.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+              <img src="./images/bug_example.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
                 height="80%" />
             </div>
             <p>
@@ -275,6 +296,40 @@
         </div>
       </div>
 </section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Code Review Task</h2>
+        <div class="content has-text-justified">
+          <div class="columns is-centered">
+            <img src="./images/review.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+              height="80%" />
+          </div>
+          <p>
+            Besides automated program repair tasks, code review tasks also play a crucial role in software development. To analyze the performance of different models on code review tasks, we conducted experiments based on MDEVAL.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Effect of Bug Location for Automated Program Repair</h2>
+        <div class="content has-text-justified">
+          <div class="columns is-centered">
+            <img src="./images/loc_apr.png" alt="HumanEval Overfitting" class="teaser-image center" width="80%"
+              height="80%" />
+          </div>
+          <p>
+            To verify whether the bug location information can have a positive impact when using large language models for automated program repair, we designed and conducted a series of comparative experiments. The figure shows the Pass@1 (%) scores with only the buggy code provided versus when additional bug location information is supplied.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
   <footer class="footer">
     <div class="container">
 
@@ -282,7 +337,7 @@
         <div class="column is-8">
           <div class="content">
             <p>
-              Please reach out to <a href="liusk@buaa.edu.cn">challenging@buaa.edu.cn</a> for questions or
+              Please reach out to <a href="liusk@buaa.edu.cn">liusk@buaa.edu.cn</a> for questions or
               feedback on MdEval. We are also open to collaborations and suggestions for new scenarios to add to
               the benchmark. Finally, MdEval provides one axis of LLM debugging evaluations and we recommend the
               following leaderboards for measuring code LM ability on various coding tasks, such as
