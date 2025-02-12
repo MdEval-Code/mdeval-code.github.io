@@ -4,7 +4,7 @@ import Leaderboard from "./LeaderboardComp"
 
 import "./index.css"
 
-import mockDataInfillingLightSpan from "./mocks/code_review.json"
+import mockDataInfillingLightSpan from "./mocks/bug_localization.json"
 import mockDataComplete from "./mocks/automated_program_repair.json"
 import mockDataExpalin from "./mocks/bug_identification.json"
 
@@ -35,7 +35,7 @@ const LeaderboardTabs = () => {
       case 'tab2':
         return <Leaderboard theme={{ base: "light" }} args={[mockDataExpalin, "bug_identification"]} />;
       case 'tab3':
-        return <Leaderboard theme={{ base: "light" }} args={[mockDataInfillingLightSpan, "code_review"]} />;
+        return <Leaderboard theme={{ base: "light" }} args={[mockDataInfillingLightSpan, "bug_localization"]} />;
       default:
         return <div>Select a tab</div>;
     }
@@ -45,7 +45,7 @@ const LeaderboardTabs = () => {
       <ul className={`tabs ${isMobile ? 'mobile' : ''}`}>
         <li className={activeTab === 'tab1' ? 'is-active' : ''} onClick={() => setActiveTab('tab1')}><a>Automated Program Repair</a></li>
         <li className={activeTab === 'tab2' ? 'is-active' : ''} onClick={() => setActiveTab('tab2')}><a>Bug Identification</a></li>
-        <li className={activeTab === 'tab3' ? 'is-active' : ''} onClick={() => setActiveTab('tab3')}><a>Code Review</a></li>
+        <li className={activeTab === 'tab3' ? 'is-active' : ''} onClick={() => setActiveTab('tab3')}><a>Bug Localization</a></li>
       </ul>
       <div className="tab-content">
         {renderLeaderboard()}
